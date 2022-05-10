@@ -75,6 +75,8 @@ public class CalculatorTest {
 		final int somme = calculatorUnderTest.add(a, b);
 
 		// Assert
+		
+		//whith assertJ
 		assertThat(somme).isEqualTo(5);
 		assertEquals(5, somme);
 	}
@@ -138,6 +140,7 @@ public class CalculatorTest {
 
 		// THEN
 		assertThat(actualDigits).containsExactlyInAnyOrder(9, 5, 8, 7);
+		
 		final Set<Integer> expectedDigits = Stream.of(5, 7, 8, 9).collect(Collectors.toSet());
 		assertEquals(expectedDigits, actualDigits);
 	}
@@ -146,6 +149,7 @@ public class CalculatorTest {
 	public void listDigits_shouldReturnsTheListOfDigits_ofNegativeInteger() {
 		final int number = -124432;
 		final Set<Integer> actualDigits = calculatorUnderTest.digitsSet(number);
+		
 		assertThat(actualDigits).containsExactlyInAnyOrder(1, 2, 3, 4);
 	}
 
